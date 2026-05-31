@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeviceHub JS - каталог</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <h1>Каталог</h1>
+        <p class="lead-text">Выберите товары и добавьте их в корзину</p>
+    </header>
+
+    <main class="page-content catalog-layout">
+        <section class="catalog-panel">
+            <div class="toolbar">
+                <label for="category-filter">Фильтр по категории</label>
+                <select id="category-filter">
+                    <option value="all">Все товары</option>
+                    <option value="periphery">Периферия</option>
+                    <option value="audio">Аудио</option>
+                    <option value="display">Мониторы</option>
+                </select>
+            </div>
+
+            <div class="catalog-grid">
+                <article class="product-card" data-id="mouse" data-category="periphery">
+                    <img src="img/mouse.png" alt="Беспроводная мышь Logitech">
+                    <h2>Беспроводная мышь Logitech</h2>
+                    <p>Компактная мышь для учебы и офисной работы.</p>
+                    <p class="price">2 490 руб.</p>
+                    <div class="card-actions">
+                        <a href="mouse.html">Подробнее</a>
+                        <button class="add-to-cart" data-id="mouse">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="keyboard" data-category="periphery">
+                    <img src="img/keyboard.png" alt="Клавиатура ExeGate">
+                    <h2>Клавиатура ExeGate</h2>
+                    <p>Полноразмерная клавиатура для набора текста.</p>
+                    <p class="price">1 790 руб.</p>
+                    <div class="card-actions">
+                        <a href="keyboard.html">Подробнее</a>
+                        <button class="add-to-cart" data-id="keyboard">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="headphones" data-category="audio">
+                    <img src="img/headphones.png" alt="Беспроводные наушники Air Max">
+                    <h2>Наушники Air Max</h2>
+                    <p>Беспроводные наушники для музыки и звонков.</p>
+                    <p class="price">49 990 руб.</p>
+                    <div class="card-actions">
+                        <a href="headphones.html">Подробнее</a>
+                        <button class="add-to-cart" data-id="headphones">Добавить в корзину</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="monitor" data-category="display">
+                    <img src="img/monitor.png" alt="Игровой монитор Predator">
+                    <h2>Игровой монитор Predator</h2>
+                    <p>Широкоформатный монитор для игр и графики.</p>
+                    <p class="price">74 990 руб.</p>
+                    <div class="card-actions">
+                        <a href="monitor.html">Подробнее</a>
+                        <button class="add-to-cart" data-id="monitor">Добавить в корзину</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside class="cart-panel">
+            <h2>Корзина</h2>
+            <ul id="cart-list"></ul>
+            <p id="cart-empty">Корзина пуста</p>
+            <p id="cart-total">Итого: 0 руб.</p>
+            <div class="cart-actions">
+                <button id="pay-button">Оплатить</button>
+                <button id="clear-cart">Очистить корзину</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; Все права защищены</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
