@@ -27,6 +27,14 @@ const products = [
 
 let cart = [];
 
+
+
+const savedCart = localStorage.getItem("cart");
+if (savedCart) {
+    cart = JSON.parse(savedCart);
+}
+
+
 const productCards = document.querySelectorAll(".product-card");
 const addButtons = document.querySelectorAll(".add-to-cart");
 const cartList = document.querySelector("#cart-list");
@@ -47,10 +55,16 @@ const calculateTotal = () => {
 };
 
 const findProduct = id => products.find(product => product.id === id);
+const saveCartToLocalStorage = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
+
+
 
 const removeFromCart = index => {
     cart.splice(index, 1);
     renderCart();
+    saveCartToLocalStorage();
 };
 
 const renderCart = () => {
@@ -83,11 +97,13 @@ const renderCart = () => {
 const addToCart = product => {
     cart.push(product);
     renderCart();
+    saveCartToLocalStorage();
 };
 
 const clearCart = () => {
     cart = [];
     renderCart();
+    saveCartToLocalStorage();
 };
 
 const filterProducts = () => {
